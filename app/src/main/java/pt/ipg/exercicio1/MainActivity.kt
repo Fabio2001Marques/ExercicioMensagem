@@ -22,7 +22,7 @@ class MainActivity : AppCompatActivity() {
 
         if(mensagem.isBlank()){
             editTextMensagem.error = "Introduza uma mensagem"
-           return
+            return
         }
 
         val intent = Intent(this, MostraMensagemActivity::class.java)
