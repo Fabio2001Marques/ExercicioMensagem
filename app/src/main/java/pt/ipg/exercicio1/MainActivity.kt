@@ -11,6 +11,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
     }
+    companion object{
+        val INFO_EXTRA_MENSAGEM = "Mensagem"
+    }
+
 
     fun enviaMensagem(view: View) {
         val editTextMensagem = findViewById<EditText>(R.id.editTextMessage)
@@ -18,7 +22,7 @@ class MainActivity : AppCompatActivity() {
         val mensagem = editTextMensagem.text.toString()
 
         val intent = Intent(this, MostraMensagemActivity::class.java)
-        intent.putExtra("Mensagem", mensagem)
+        intent.putExtra(INFO_EXTRA_MENSAGEM, mensagem)
 
         startActivity(intent)
     }
