@@ -3,6 +3,7 @@ package pt.ipg.exercicio1
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.TextView
+import java.util.*
 
 class MostraMensagemActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -10,14 +11,15 @@ class MostraMensagemActivity : AppCompatActivity() {
         setContentView(R.layout.activity_mostra_mensagem)
 
         val mensagem = intent.getStringExtra(MainActivity.INFO_EXTRA_MENSAGEM)
-        val hora = intent.getStringExtra(MainActivity.HORA)
+        val data = intent.getSerializableExtra(MainActivity.Data) as Date
 
 
         val textViewMensagem = findViewById<TextView>(R.id.textViewMensagem)
         textViewMensagem.setText(mensagem)
 
         val textViewHora = findViewById<TextView>(R.id.textViewHora)
-        textViewHora.setText(hora)
+        textViewHora.setText(data.toString())
+
 
 
     }
